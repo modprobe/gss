@@ -43,7 +43,7 @@
           mehr Angriffspunkte als bei einem zentralisierten System, da viele Computer
           koexistieren und jeder davon ein Einfallstor sein kann. Weiterhin gibt
           es offene Übertragungswege, die als Angriffspunkt dienen können.
-          In verteilten Systemen kann es oft auch mehrere Betreiber geben, unter
+          In verteilten Systemen kann es oft auch mehrere Betreibende geben, unter
           denen es jedoch bei einem Angriff oft nur zu mangelhafter Kommunikation
           kommt.
 
@@ -55,7 +55,7 @@
     \item
         \begin{enumerate}[(a)]
             \item \textbf{Mangelnde Kompetenz der Nutzer}:
-                  Oft sind gerade Nutzer, die nicht technisch versiert sind,
+                  Oft sind gerade Nutzer*innen, die nicht technisch versiert sind,
                   nicht in der Lage, z.B. eine Phishing-Attacke als solche zu
                   erkennen. Dadurch kann das Unternehmen kompromittiert werden.
             \item \textbf{Komfort vs. Sicherheit}:
@@ -69,7 +69,7 @@
                   solcher Software nicht an und greifen zu einer
                   kostengünstigeren und oft unsichereren Lösung.
         \end{enumerate}
-    \item Eine Signatur bezeichnet eine Unterschrift, die die Identität einer person ausweisen soll, die jedoch im Normalfall leicht zu fälschen ist. Eine digitale Signatur dagegen ist ein kryptographisches Verfahren, bei dem eine Nachricht mit einem nur dem Absender bekannten Private Key verschlüsselt wird. Danach kann jeder die Urheberschaft des Absenders durch Decodierung der Nachricht mit dem öffentlichen Public Key des Absenders prüfen, da das Verfahren der digitalen Signatur die Urheberschaft zweifelsfrei beweist.
+    \item Eine Signatur bezeichnet eine Unterschrift, die die Identität einer person ausweisen soll, die jedoch im Normalfall leicht zu fälschen ist. Eine digitale Signatur dagegen ist ein kryptographisches Verfahren, bei dem eine Nachricht mit einem nur dem*der Absendender*in bekannten Private Key verschlüsselt wird. Danach kann jeder die Urheberschaft des*der Absender*in durch Decodierung der Nachricht mit dem öffentlichen Public Key des Absenders prüfen, da das Verfahren der digitalen Signatur die Urheberschaft zweifelsfrei beweist.
 \end{enumerate}
 
 \section{Schutzziele}
@@ -117,17 +117,17 @@
     \item
         \begin{description}
             \item[Anonymität:]
-                Als Betreiber einer Plattform kann man Anonymität gewährleisten,
+                Als Betreiber*in einer Plattform kann man Anonymität gewährleisten,
                 indem man keine Identifizierung fordert und auch keine Daten
                 aufzeichnet, die zur Identifizierung genutzt werden könnten,
-                z.B. Geodaten aus der IP-Adresse. Als Nutzer kann man sich hier
+                z.B. Geodaten aus der IP-Adresse. Als Nutzer*in kann man sich hier
                 nur teilweise mittels Software wie Tor oder VPNs schützen.
             \item[Pseudonymität:]
-                Pseudonymität ist gewährleistet, wenn man als Betreiber keine
+                Pseudonymität ist gewährleistet, wenn man als Betreiber*in keine
                 Nutzer mit ihrer Identität identifiziert, sondern mit einem
                 Pseudonym. Persönliche Daten dürfen dazu nicht erfasst werden.
             \item[Unbeobachtbarkeit:]
-                Unbeobachtbarkeit ist gegeben, wenn man auch als Betreiber
+                Unbeobachtbarkeit ist gegeben, wenn man auch als Betreiber*in
                 keine Daten mitlesen kann. Dazu können Daten beispielsweise
                 clientseitig verschlüsselt werden.
             \item[Vertraulichkeit:]
@@ -149,7 +149,7 @@
                 Wird nun etwas an den Daten verändert, ändert sich auch die
                 Checksumme.
             \item[Zurechenbarkeit:]
-                Durch serverseitiges Loggen kann nachgewiesen werden, wann und
+                Durch serverseitiges Logging kann nachgewiesen werden, wann und
                 ob Daten versandt wurden. Natürlich funktioniert dies nur so lange
                 es überhaupt einen Server gibt (also kein P2P-Netzwerk) und der
                 Server nicht kompromittiert ist.
@@ -190,34 +190,34 @@
         einzuordnen, und gibt ggf. auch Hinweise auf
         Verbesserungsmöglichkeiten.
 
-        Der Angreifende wird hierbei in verschiedenen Kategorien modelliert:
+        Der*Die Angreifende wird hierbei in verschiedenen Kategorien modelliert:
 
         \begin{description}
             \item[Rolle:]
-                Wie viel Informationen über und Zugriff auf das System steht dem
+                Wie viel Informationen über und Zugriff auf das System steht dem*der
                 Angreifenden zur Verfügung? Bspw. kann davon ausgegangen werden,
                 dass ein Wartungsdienst wesentlich mehr Informationen und
-                Zugriff besitzt als ein normaler Benutzer (vgl. Insider $\leftrightarrow$ Outsider).
+                Zugriff besitzt als ein*e normaler Benutzer*in (vgl. Insider $\leftrightarrow$ Outsider).
             \item[Verbreitung:]
-                An welchen Stellen kann der Angreifende Informationen abgreifen
+                An welchen Stellen kann der*die Angreifende Informationen abgreifen
                 oder verändern? Im kleinsten Fall hat ein Agitator nur
                 eingeschränkte Benutzerrechte und kann nur wenige Informationen
                 lesen oder verändern. In einem unwesentlich schlimmeren Fall
-                hat ein Angreifer beispielsweise Zugriff auf allen Traffic an
+                hat ein*e Angreifer*in beispielsweise Zugriff auf allen Traffic an
                 einem Internet Exchange Point (IXP) eines Landes (in Deutschland
                 wäre das das DE-CIX in Frankfurt).
             \item[Verhalten:]
-                Verhält sich ein Angreifer aktiv oder passiv? Sammelt er nur
+                Verhält sich ein*e Angreifer*in aktiv oder passiv? Sammelt er nur
                 Daten, bspw. durch Mitschneiden von Netzwerktraffic, oder werden
                 aktiv Daten zerstört?
             \item[Rechenkapazität:]
                 Besonders bei kryptographischen Schutzmechanismus ist bedeutend,
-                über wie viel Rechenkapazität ein Angreifer verfügt. Diese
+                über wie viel Rechenkapazität ein*e Angreifer*in verfügt. Diese
                 Schutzmechanismen beruhen auf Problemen, die sich mit ,,normaler'',
                 d.h. kommerziell erschwinglich verfügbarer Hardware,  nicht
-                lösen lassen. Verfügt ein Angreifer jedoch über eine große
+                lösen lassen. Verfügt ein*e Angreifer*in jedoch über eine große
                 Rechenkapazität ist ein Schutz nicht notwendigerweise gewährleistet.
-                Besonders wenn der Angreifer ein Staat bzw. eine Behörde ist
+                Besonders wenn der*die Angreifer*in ein Staat bzw. eine Behörde ist
                 (wie z.B. die \textit{National Security Agency} der USA oder der
                 Bundesnachrichtendienst) kann von einer enormen Rechenleistung
                 ausgegangen werden.
@@ -226,14 +226,14 @@
     \item 
         \begin{description}
             \item[Rolle:]
-                Ein Angreifer ist höchstwahrscheinlich ein Outsider der nicht 
+                Ein*e Angreifer*in ist höchstwahrscheinlich ein Outsider der nicht 
                 mehr Zugriff auf den Automaten hat als ein normaler Benutzer auch,
                 jedoch diesen physischen zugang mit technischen Hilfsmitteln ausnutzt.
             \item[Verbreitung:]
                 Ein Angriff auf einen Geldautomaten geschieht normalerweise durch m
                 anipulierte Kartenlesegeräte, die vor den eigentlichen Kartenleser des 
                 Geldautomaten montiert werden. Meistens wird ein solches in Verbindung 
-                mit einer kleinen Kamera oder eines Menschen in der Nähe des Automaten, 
+                mit einer kleinen Kamera oder einer Person in der Nähe des Automaten, 
                 die die PIN des Kunden erspähen sollen. Mitunter kommt auch eine 
                 Tastaturattrappe zum Einsatz.
 
@@ -266,7 +266,7 @@
     \item
         Wenn wir einem der Lieferdienste Spionageabsichten unterstellen, könnte
         das Schutzziel der Vertraulichkeit kompromittiert werden. Beispielsweise
-        könnte ein feindlicher Agent einen Datenträger mit einem Trojaner
+        könnte ein*e feindliche*r Agent*in einen Datenträger mit einem Trojaner
         einschleusen. Sollten dann auch Sabotageabsichten hinzukommen, könnte
         z.B. auch Schadcode eingeschleust werden, der Daten zerstört und damit
         den ordnungsgemäßen Betrieb bzw. das Schutzziel der Verfügbarkeit stört.
@@ -287,13 +287,12 @@
 \section{Passwortsicherheit}
 \label{sec:Passwortsicherheit}
 
-\begin{enumerate}[1.]
-    \item TODO
+\begin{enumerate}[2.]
     \item
         Wenn Passwörter im Klartext gespeichert werden, sind sie für alle
         ersichtlich, die Zugriff auf diese Datenbank haben, sei dieser Zugriff
         legitim oder illegitim. Bei einem massiven Leak würden Passwörter
-        dabei ungeschützt verloren gehen. Über die Hälfte aller Internetnutzer
+        dabei ungeschützt verloren gehen. Über die Hälfte aller Internetnutzer*innen
         benutzt weniger als 5 Passwörter in ihrem gesamten Online-Leben%
         \footnote{TeleSign Consumer Account Security Report, 2015,\\%
         \url{https://www.telesign.com/wp-content/uploads/2015/06/%
@@ -305,8 +304,8 @@
         benutzt, die sich nicht umkehren lässt, d.h. aus dem berechneten
         Hashwert lässt sich der Ausgangstext nicht wiederherstellen. Benutzt man
         dieses System zur Kennwortspeicherung, so wird beim Setzen des Passworts
-        der Hashwert berechnet und in einer Datenbank gespeichert. Versucht der
-        Benutzer sich nun mit einem Passwort anzumelden, wird davon ebenfalls
+        der Hashwert berechnet und in einer Datenbank gespeichert. Versucht der*die
+        Benutzer*in sich nun mit einem Passwort anzumelden, wird davon ebenfalls
         der Hashwert berechnet. Sind beide Hashwerte gleich hat der User das
         korrekte Passwort eingegeben.
 
@@ -314,10 +313,10 @@
     	Bei einem Kennwort, das aus maximal 8 Stellen besteht und nur alphanumerische Zeichen (A-Z, a-z, 0-9; insgesamt 62 Zeichen) verwendet gibt es
     	\(62^8 + 62^7 + ... + 62^2 + 62 = 2,219194516*10^{14}\) Möglichkeiten. Bei 1 Million Versuchen pro Sekunde ergeben sich dadurch \(221919451.6\) Sekunden oder ca. 7 Jahre.
 
-    	Bei einem Passwort aus maximal 16 Stellen, jedoch nur mit den Zahlen 1-9 ergeben sich \(10^{16} + 10^{15} + ... + 10^2 + 10 = 1,111111111+10^{16}\) Möglichkeiten,
-    	für die unser Computer ca. 3532 jahre benötigen würde.
+    	Bei einem Passwort aus maximal 16 Stellen, jedoch nur mit den Zahlen 1-9 ergeben sich \(10^{16} + 10^{15} + ... + 10^2 + 10 = 1,111111111*10^{16}\) Möglichkeiten,
+    	für die unser Computer ca. 3532 Jahre benötigen würde.
     	
-    	Somit wäre die Lösung, die nur mit Zahlen arbeiet, für unseren Computer
+    	Somit wäre die Lösung, die nur mit Zahlen arbeitet, für unseren Computer
     	komplexer.
 
 
