@@ -15,8 +15,8 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{Alexander Timmermann, Jannis Krämer}
-\fancyhead[C]{GSS-Übungsblatt 1}
+\fancyhead[C]{Alexander Timmermann, Jannis Krämer}
+\fancyhead[L]{Blatt 1}
 \fancyhead[R]{Seite~\thepage}
 
 \usemintedstyle{tango}
@@ -69,7 +69,15 @@
                   solcher Software nicht an und greifen zu einer
                   kostengünstigeren und oft unsichereren Lösung.
         \end{enumerate}
-    \item Eine Signatur bezeichnet eine Unterschrift, die die Identität einer person ausweisen soll, die jedoch im Normalfall leicht zu fälschen ist. Eine digitale Signatur dagegen ist ein kryptographisches Verfahren, bei dem eine Nachricht mit einem nur dem*der Absendender*in bekannten Private Key verschlüsselt wird. Danach kann jeder die Urheberschaft des*der Absender*in durch Decodierung der Nachricht mit dem öffentlichen Public Key des Absenders prüfen, da das Verfahren der digitalen Signatur die Urheberschaft zweifelsfrei beweist.
+
+    \item Eine Signatur bezeichnet eine Unterschrift, die die Identität einer Person
+          ausweisen soll, die jedoch im Normalfall leicht zu fälschen ist. Eine
+          digitale Signatur dagegen ist ein kryptographisches Verfahren, bei
+          dem eine Nachricht mit einem nur dem*der Absendender*in bekannten
+          Private Key verschlüsselt wird. Danach kann jeder die Urheberschaft
+          des*der Absender*in durch Decodierung der Nachricht mit dem öffentlichen
+          Public Key des Absenders prüfen, da das Verfahren der digitalen Signatur 
+          die Urheberschaft zweifelsfrei beweist.
 \end{enumerate}
 
 \section{Schutzziele}
@@ -229,6 +237,7 @@
                 Ein*e Angreifer*in ist höchstwahrscheinlich ein Outsider der nicht 
                 mehr Zugriff auf den Automaten hat als ein normaler Benutzer auch,
                 jedoch diesen physischen zugang mit technischen Hilfsmitteln ausnutzt.
+
             \item[Verbreitung:]
                 Ein Angriff auf einen Geldautomaten geschieht normalerweise durch m
                 anipulierte Kartenlesegeräte, die vor den eigentlichen Kartenleser des 
@@ -240,12 +249,14 @@
                 Mit einem solchen Kartenlesegerät kann die Karte eine*r Kund*in problemlos 
                 geklont werden. Eine solche geklonte Bankkarte ist ohne die PIN jedoch nutzlos, 
                 deshalb ist das Abgreifen der PIN des Kunden der wichtigste Teil des Angriffs.
+
             \item[Verhalten:]
                 Die Angreifenden agieren dabei passiv, da ein*e Kund*in sehr schnell Verdacht 
                 schöpfen würde wenn der Automat z.B. kein Geld ausgeben würde. Daher ist 
                 der Abgriff vor allem darauf ausgelegt, passiv so viele Daten wie möglich 
                 zu sammeln, um erst in einem zweiten Schritt (mit der geklonten Karte und 
                 der beobachteten PIN) aktiv auf das Konto zuzugreifen.
+
             \item[Rechenkapazität:]
             	Der Angriff auf den Geldautomaten benötigt kaum Rechenkapaziät: Das Gerät
             	zum Abgreifen der Kartendaten muss nur in der Lage sein, den Magnetstreifen der Karte
@@ -255,7 +266,6 @@
             	Herstellung von Kartenkopien sind für Kriminielle erschwinglich.
             	Eine EC-Karte über den Chip zu kopieren ist deutlich Anspruchsvoller, dies ist
             	Angreifenden normalerweise nicht möglich.
-
         \end{description}
 \end{enumerate}
 
@@ -310,16 +320,17 @@
         korrekte Passwort eingegeben.
 
     \item 
-    	Bei einem Kennwort, das aus maximal 8 Stellen besteht und nur alphanumerische Zeichen (A-Z, a-z, 0-9; insgesamt 62 Zeichen) verwendet gibt es
-    	\(62^8 + 62^7 + ... + 62^2 + 62 = 2,219194516*10^{14}\) Möglichkeiten. Bei 1 Million Versuchen pro Sekunde ergeben sich dadurch \(221919451.6\) Sekunden oder ca. 7 Jahre.
+    	Bei einem Kennwort, das aus maximal 8 Stellen besteht und nur alphanumerische
+        Zeichen (A-Z, a-z, 0-9; insgesamt 62 Zeichen) verwendet gibt es
+        \(\sum_{i=1}^{8} 62^i = 2,219194516 \cdot 10^{14}\) Möglichkeiten.
+        Bei 1 Million Versuchen pro Sekunde ergeben sich dadurch \(221919451.6\) Sekunden oder ca. 7 Jahre.
 
-    	Bei einem Passwort aus maximal 16 Stellen, jedoch nur mit den Zahlen 1-9 ergeben sich \(10^{16} + 10^{15} + ... + 10^2 + 10 = 1,111111111*10^{16}\) Möglichkeiten,
+    	Bei einem Passwort aus maximal 16 Stellen, jedoch nur mit den Zahlen 1-9
+        ergeben sich \(\sum_{i=1}^{16} 10^i = 1,111111111 \cdot 10^{16}\) Möglichkeiten,
     	für die unser Computer ca. 3532 Jahre benötigen würde.
     	
     	Somit wäre die Lösung, die nur mit Zahlen arbeitet, für unseren Computer
     	komplexer.
-
-
 
     \item
         Durch das Hinzufügen eines Salts wird der Hashwert in unvorhersehbarer
