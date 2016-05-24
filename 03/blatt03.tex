@@ -40,7 +40,11 @@
 \section{Echtzeit- und Multiprozessor-Scheduling}
 
 \begin{enumerate}[\bf a)]
-    \item
+    \item Addiert man die Anteile der Periode der Prozesse, der tatsächlich Rechenzeit ist, so kann man ausrechnen wie lange alle Prozesse zusammen bei beliebig vielen Perioden den Prozessor belasten. Ist dieser Wert größer als 1 so ist der Prozessor über $100\%$ der Zeit belegt, was bedeuten würde, dass Scheduling unmöglich wäre. Für die gegebenen 3 Prozesse ergibt sich:
+    \begin{displaymath}
+        P(A_1) + P(A_2) + P(A_3) = \frac{1}{4} + \frac{3}{7} + \frac{1}{3} = \frac{85}{84} > 1
+    \end{displaymath}
+    Ein Scheduling dieser 3 Prozesse auf nur einem Prozessor ist somit nicht möglich. 
 \end{enumerate}
 
 \section{Prioritätsinversion}
