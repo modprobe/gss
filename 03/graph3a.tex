@@ -1,0 +1,35 @@
+\begin{blockgraph}{34}{5}{1} % 170 / 5 = 34 cols
+\bglabelxx{0}
+\bglabelxx{5}
+\bglabelxx{10}
+\bglabelxx{15}
+\bglabelxx{20}
+\bglabelxx{25}
+\bglabelxx{30}
+\bglabelxx{34}
+
+\bglabely{4}{Periodendauer B}
+\bglabely{3}{Periodendauer Z}
+\bglabely{2}{Periodendauer M}
+\bglabely{1}{Berechnung}
+\bglabely{0}{$Kontextswitch \star$}
+
+\bgblock[1]{0}{2}{$B_1$}
+\bgblock[1]{2}{6}{$Z_1$}
+\bgblock[1]{6}{8}{$M_1 a$}
+\bgblock[0]{8}{10}{$B_2$}
+\bgblock[1]{10}{12}{$M_1 b$}
+\bgblock[0]{12}{16}{$Z_2$}
+\bgblock[0]{16}{18}{$B_3$}
+\bgblock[1]{18}{20}{$M_1 c$}
+
+\bgblock[2]{0}{23}{$M$}
+\bgblock[2]{23}{34}{$M$} % 115 / 5 = 23
+\bgblock[3]{0}{12}{$Z$}
+\bgblock[3]{12}{24}{$Z$}
+\bgblock[3]{24}{34}{$Z$} % 60 / 5 = 12
+\bgblock[4]{0}{8}{$B$}
+\bgblock[4]{8}{16}{$B$}
+\bgblock[4]{16}{24}{$B$}
+\bgblock[4]{24}{32}{$B$} % 40 / 5 = 8
+\end{blockgraph}
