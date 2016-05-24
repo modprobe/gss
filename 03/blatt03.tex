@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{scrartcl}
+\documentclass[a4paper,11pt,ngerman]{scrartcl}
 
 \usepackage[shortlabels]{enumitem}
 \usepackage{csquotes}
@@ -12,7 +12,9 @@
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage{lastpage}
+\usepackage{graphicx}
 \usepackage{blockgraph}
+\usepackage{icomma}
 
 \author{Alexander Timmermann, Jannis Krämer}
 \title{GSS-Übungsblatt 2}
@@ -34,7 +36,59 @@
 \section{Scheduling-Algorithmen}
 
 \begin{enumerate}[\bf a)]
-    \item
+    \item Prozessabfolge:\\
+        \begin{figure}[h]
+            \scalebox{0.56}{\input{bg1.tex}}
+        \end{figure}
+
+        Im ersten Auswahlschritt ist nur $p1$ verfügbar und wird deshalb
+        ausgeführt. Nach dem Abschluss von $p1$ enthält unsere Warteschlange
+        folgende Prozesse mit den entsprechenden Bediengüten:
+
+        \begin{tabular}{c|c|c}
+            \textbf{Prozess} & \textbf{Wartedauer} & \textbf{Bediengüte}\\
+            \hline
+
+            $p2$ & 2 & $\frac{7}{5} = 1,4$\\
+            $p3$ & 1 & 2\\
+            $p4$ & 0 & 1
+        \end{tabular}
+
+        Folglich wird $p3$ gewählt, geladen und ausgeführt.
+
+        Im nächsten Schritt haben wir folgende Warteschlange:
+
+        \begin{tabular}{c|c|c}
+            \textbf{Prozess} & \textbf{Wartedauer} & \textbf{Bediengüte}\\
+            \hline
+
+            $p2$ & 5 & 2\\
+            $p4$ & 3 & $\frac{5}{2} = 2,5$\\
+            $p5$ & 0 & 1
+        \end{tabular}
+
+        Es wird $p4$ ausgewählt. Nachdem $p4$ beendet ist haben wir noch folgende
+        Prozesse in der Warteschlange:
+
+        \begin{tabular}{c|c|c}
+            \textbf{Prozess} & \textbf{Wartedauer} & \textbf{Bediengüte}\\
+            \hline
+
+            $p2$ & 7 & $\frac{12}{5} = 2,4$\\
+            $p5$ & 3 & $\frac{11}{8} = 1,375$
+        \end{tabular}
+
+        Nachdem dann auch $p2$ ausgeführt wurde bleibt nur noch $p5$ in der
+        Queue und wird zuletzt ausgeführt.
+
+    \item Prozessabfolge:\\
+        \begin{figure}[h]
+            \scalebox{0.5}{\input{bg2.tex}}
+        \end{figure}
+
+        Bei Round Robin wird jeder Prozess in der Reihenfolge in die Warteschlange
+        eingefügt in der er bereitsteht. In der gleichen Reihenfolge wird auch
+        abgearbeitet bzw. getauscht.
 \end{enumerate}
 
 \section{Echtzeit- und Multiprozessor-Scheduling}
