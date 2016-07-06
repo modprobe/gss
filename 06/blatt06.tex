@@ -40,7 +40,14 @@
     \item
       Bei einem symetrischen Kryptosystem wird für Ver- und Entschlüsselung
       nur ein Schlüssel verwendet, bei einem asymetrischen jeweils ein distinkter für
-      Ver- und Entschlüsselung.
+      Ver- und Entschlüsselung. Bei einem symetrischen Verfahren müssen demnach
+      für jede mögliche Kombination aus sendender Person und empfangender Person ein
+      Schlüssel generiert werden, insgesamt also $\binom{a}{b}$. Bei einem asymetrischen
+      Kryptosystem benötigt jede Person einen öffentlichen und einen privaten Schlüssel
+      und kann danach durch Herausgabe des öffentlichen Schlüssels und bei Geheimhaltung
+      des privaten Schlüssels mit allen anderen Gruppenmitgliedern kommunizieren ohne
+      dass jemand unbefugtes die Nachricht entschlüsseln könnte. Hierbei werden insgesamt
+      also nur $2n$ Schlüssel benötigt.
     \item
       \begin{itemize}
         \item
@@ -108,7 +115,7 @@
       Dieses System schützt jedoch nicht vor einem Man-in-the-Middle-Angriff, bei dem
       sich der*die Angreifer*in zwischen Server und Client schaltet und sowohl die
       Challenge des Servers als auch die Response des Client abgreift und diese dann
-      weiterleitet, als h'tte die Generierung auf dem angreifenden System stattgefunden.
+      weiterleitet, als hätte die Generierung auf dem angreifenden System stattgefunden.
 
       Nach der Authentifizierung kann durch die Man-in-the-Middle-Attack außerdem der
       (immer noch unverschlüsselte) Daten mitlesen und ggf. anpassen.
@@ -125,6 +132,5 @@
       haben :-)
     \end{quote}
   Nachfolgend der benutzte Code:
-  \inputminted[linenos,numbersep=12pt,autogobble,frame=lines,framesep=2mm]%
-          {python3}{rsadecryp.py}
+  \inputminted[linenos,numbersep=12pt,autogobble,frame=lines,framesep=2mm]{python3}{rsadecrypt.py}
 \end{document}
