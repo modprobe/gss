@@ -1,0 +1,130 @@
+\documentclass[a4paper,11pt,ngerman]{scrartcl}
+
+\usepackage[shortlabels]{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[top=1.3in, bottom=1in, left=1.0in, right=0.6in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{minted}
+%\usepackage{blockgraph}
+\usepackage{icomma}
+
+\author{Alexander Timmermann, Jannis Krämer}
+\title{GSS-Übungsblatt 6}
+\date{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{Alexander Timmermann, Jannis Krämer}
+\fancyhead[L]{Blatt 6}
+\fancyhead[R]{Seite~\thepage\ von \pageref{LastPage}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\doublespace
+
+\section*{Aufgabe 1: Zentrale Begriffe der Kryptographie}
+  \begin{enumerate}[\bf 1.]
+    \setcounter{enumi}{1}
+    \item
+      Bei einem symetrischen Kryptosystem wird für Ver- und Entschlüsselung
+      nur ein Schlüssel verwendet, bei einem asymetrischen jeweils ein distinkter für
+      Ver- und Entschlüsselung.
+    \item
+      \begin{itemize}
+        \item
+          Aufgrund des hohen Rechenaufwandes ausymetrischer Kryptosysteme wird
+          Alice für zeitkritische Übertragungen (Echtzeitapplikationen o.ä.) sowie
+          für große Datenmengen. Auch für das Versenden einer Nachricht an mehrere
+          Empfänger*innen ohne erneute Verschlüsselung kann Alice sich für ein
+          hybrides Kryptosystem entscheiden.
+        \item
+          Alice erzeugt mit einem symmetrischen Verschlüsselungssystem einen
+          neuen Schlüssel. Damit verschlüsselt sie die Nachricht. Den symmetrischen
+          Schlüssel verschlüsselt sie ebenfalls, jedoch mit Bobs öffentlichen Schlüssel.
+          Dann schickt sie beide Chiffres an Bob. Dieser kann nun zuerst den symetrischen
+          Schlüssel entschlüsseln und mit diesem dann die Nachricht selbst entschlüsseln.
+        \item
+          Die Nachricht würde vorraussichtlich aus einem Header bestehen, in dem der
+          symetrische Schlüssel übertragen wird und einem Teil für die codierte Nachricht.
+          Die genaue Umsetzung ist dabei von Protokoll zu Protokoll unterschiedlich.
+      \end{itemize}
+  \end{enumerate}
+
+\section*{Aufgabe 2: Parkhaus}
+  \begin{enumerate}[\bf 1.]
+    \setcounter{enumi}{1}
+    \item
+      Der Barcode, der vom Kassenautomaten auf das Ticket gestempelt wird, scheint
+      immer der gleiche zu sein und kann somit wohl nur eine binäre Bestätigung des
+      Bezahlens sein. Dieser, sowie die menschenlesbaren Informationen unten links,
+      könnte ein*e Angreifer*in also auf das Ticket drucken und damit versuchen, gratis
+      zu parken.
+
+      Auch die Rabattbarcodes scheinen sich nicht sehr zu verändern und ließen sich
+      nach Probieren verschiedener Kombinationen zu fälschen; in unser Stichprobe
+      erscheinen nur drei unterschiedliche Rabattbarcodes.
+
+      Dem System liegt offenbar ein Angreifermodell zugrunde dass von einem externen
+      Angriff ausgeht, der zwar über beliebig viel Rechenkapazität, jedoch nicht
+      über einen Barcodedrucker verfügen kann.
+    \item
+      Die besten Ergebnisse würde eine Umstellung des Ticket-Systems auf ein generell
+      sicheres System (z.B. RFID-Parktickets) erzielen.
+
+      Das vorhandene System würde davon profitieren, wenn sowohl in den Rabattcodes
+      als auch im Kassenautomaten-Barcode das Datum und die Uhrzeit codiert wäre.
+      Das würde das System zwar auch nicht endgültig absichern, jedoch wäre eine
+      Entschlüsselung deutlich aufwendiger. Dies scheint bisher nicht der Fall zu sein.
+  \end{enumerate}
+
+\section*{Aufgabe 3: Authentifizierungsprotokolle}
+  \begin{enumerate}[\bf 1.]
+    \setcounter{enumi}{1}
+    \item
+      Ein*e Angreifer*in kann sich bei diesem System immer noch beim Server athentifizieren,
+      indem sie*er als passive*r Angreifer*in während der Übertragung $r$ und $c$ abgreift.
+      Da bei diesem Ansatz die Daten immer noch unverschlüsselt übertragen werden, ist
+      dies ungehindert möglich.
+
+      Einzig ein Angriff bei dem ein*e Angreifer*in versucht, die Login-Daten $u$ und $p$
+      abzugreifen wird dadurch verhindert.
+    \item
+      Durch das Challenge-Response-System müsste ein*e Angreifer*in die Verschlüsselungsfunktion
+      $E$ und den Schlüssel $k$ kennen um dem Server die korrekte Response zu liefern,
+      ohne die es nun nicht mehr möglich ist sich als jemand anders auszugeben.
+
+      Dieses System schützt jedoch nicht vor einem Man-in-the-Middle-Angriff, bei dem
+      sich der*die Angreifer*in zwischen Server und Client schaltet und sowohl die
+      Challenge des Servers als auch die Response des Client abgreift und diese dann
+      weiterleitet, als h'tte die Generierung auf dem angreifenden System stattgefunden.
+
+      Nach der Authentifizierung kann durch die Man-in-the-Middle-Attack außerdem der
+      (immer noch unverschlüsselte) Daten mitlesen und ggf. anpassen.
+  \end{enumerate}
+
+\section*{Aufgabe 5: RSA-Verfahren}
+  Nach der Berechnung von $d=4343$ ergibt sich folgender entschlüsselter Text:
+    \begin{quote}
+      Fuer die GSS-Klausur sind folgende Themen wichtig: Angreifermodelle, Schutzziele,
+      Rainbow Tables, die (Un-)Sicherheit von Passwoertern und dazugehoerige Angriffe,
+      Zugangs- und Zugriffskontrolle, Timing-Attack und Power-Analysis, Biometrische Verfahren,
+      Grundlagen der Kryptographie, das RSA-Verfahren, Authentifikationsprotokolle und
+      natuerlich alle anderen Inhalte, die wir in der Uebung und der Vorlesung behandelt
+      haben :-)
+    \end{quote}
+  Nachfolgend der benutzte Code:
+  \inputminted[linenos,numbersep=12pt,autogobble,frame=lines,framesep=2mm]%
+          {python3}{rsadecryp.py}
+\end{document}
